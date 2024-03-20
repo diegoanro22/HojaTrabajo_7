@@ -1,12 +1,16 @@
-class TreeBinary<K extends Comparable<K>, V> {
+class BST<K extends Comparable<K>, V> {
     private Node<K, V> root;
 
     // Constructor de TreeBinary
-    public TreeBinary() {
+    public BST() {
         this.root = null;
     }
 
-    // Método para insertar un nuevo nodo
+
+    /**
+     * @param key
+     * @param value
+     */
     public void insertar(K key, V value) {
         root = insertarRec(root, key, value);
     }
@@ -30,7 +34,10 @@ class TreeBinary<K extends Comparable<K>, V> {
         return current;
     }
 
-    // Método para buscar un valor por su clave
+    /**
+     * @param key
+     * @return
+     */
     public V buscar(K key) {
         return buscarRec(root, key);
     }
