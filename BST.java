@@ -57,4 +57,20 @@ class BST<K extends Comparable<K>, V> {
             return searchRec(current.getRight(), key);
         }
     }
+
+
+    public void inOrder() {
+        inOrderRec(root);
+    }
+
+    private void inOrderRec(Node<K, V> node) {
+        if (node != null) {
+            inOrderRec(node.getLeft()); 
+            System.out.println("(" + node.getKey() + ", " + node.getValue()+ ")"); // Procesa el nodo actual
+            inOrderRec(node.getRight()); 
+        }
+    }
+
+
+
 }

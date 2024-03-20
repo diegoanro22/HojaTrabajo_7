@@ -8,6 +8,7 @@ public class CheckExpression {
             String [] listaLinea = linea.split(", ",2);
             tree.insert(listaLinea[0],(listaLinea[1]));
         }
+        tree.inOrder();
     }
 
     public String checkText(ArrayList<String> text){
