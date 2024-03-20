@@ -7,7 +7,7 @@ public class Main {
 
 
         Archivo diccionariotxt = new Archivo("diccionario.txt");
-        Archivo textotxt = new Archivo("diccionario.txt");
+        Archivo textotxt = new Archivo("texto.txt");
         ArrayList<String> diccionario = null;
         ArrayList<String> texto = null;
 
@@ -19,6 +19,7 @@ public class Main {
         }
 
         checkexpression.insertDiccionary(diccionario);
+        System.out.println(checkexpression.checkText(texto));
 
 
     }

@@ -10,7 +10,30 @@ public class CheckExpression {
         }
     }
 
-    
+    public String checkText(ArrayList<String> text){
+        StringBuilder initialText = new StringBuilder();
+        StringBuilder finalText = new StringBuilder();
+        
+        for (String linea :text){
+            initialText.append(linea);
+        }
+
+
+        String initialTextString = initialText.toString();
+        String [] partsString = initialTextString.split("\\s+");
+
+        for (String part :partsString){
+            String traduccion = tree.buscar(part); 
+            if (traduccion != null) {
+                finalText.append("*").append(traduccion); 
+            } else {
+                finalText.append("*").append(part).append("*"); 
+            }
+        }
+
+        return finalText.toString();
+    }
+
 
 
 }

@@ -21,7 +21,7 @@ public class Archivo {
         String linea;
         while ((linea = lector.readLine()) != null){
 
-            listpalabras.add(linea.replace("(","").replace(")","").toString());
+            listpalabras.add(linea.replace("(","").replace(")","").replace(".","").toString());
             
         }
         lector.close();
