@@ -11,11 +11,11 @@ class BST<K extends Comparable<K>, V> {
      * @param key
      * @param value
      */
-    public void insertar(K key, V value) {
-        root = insertarRec(root, key, value);
+    public void insert(K key, V value) {
+        root = insertRec(root, key, value);
     }
 
-    private Node<K, V> insertarRec(Node<K, V> current, K key, V value) {
+    private Node<K, V> insertRec(Node<K, V> current, K key, V value) {
         if (current == null) {
             return new Node<K, V>(key, value);
         }
@@ -23,9 +23,9 @@ class BST<K extends Comparable<K>, V> {
         int compareResult = key.compareTo(current.getKey());
 
         if (compareResult < 0) {
-            current.setLeft(insertarRec(current.getLeft(), key, value));
+            current.setLeft(insertRec(current.getLeft(), key, value));
         } else if (compareResult > 0) {
-            current.setRight(insertarRec(current.getRight(), key, value));
+            current.setRight(insertRec(current.getRight(), key, value));
         } else {
             // La clave ya existe, actualizamos su valor
             current.setValue(value);
@@ -38,11 +38,11 @@ class BST<K extends Comparable<K>, V> {
      * @param key
      * @return
      */
-    public V buscar(K key) {
-        return buscarRec(root, key);
+    public V search(K key) {
+        return searchRec(root, key);
     }
 
-    private V buscarRec(Node<K, V> current, K key) {
+    private V searchRec(Node<K, V> current, K key) {
         if (current == null) {
             return null;
         }
@@ -52,9 +52,9 @@ class BST<K extends Comparable<K>, V> {
         if (compareResult == 0) {
             return current.getValue();
         } else if (compareResult < 0) {
-            return buscarRec(current.getLeft(), key);
+            return searchRec(current.getLeft(), key);
         } else {
-            return buscarRec(current.getRight(), key);
+            return searchRec(current.getRight(), key);
         }
     }
 }

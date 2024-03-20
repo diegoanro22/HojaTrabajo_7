@@ -6,7 +6,7 @@ public class CheckExpression {
     public void insertDiccionary(ArrayList<String> diccionario){
         for (String linea : diccionario){
             String [] listaLinea = linea.split(", ",2);
-            tree.insertar(listaLinea[0],(listaLinea[1]));
+            tree.insert(listaLinea[0],(listaLinea[1]));
         }
     }
 
@@ -23,13 +23,14 @@ public class CheckExpression {
         String [] partsString = initialTextString.split("\\s+");
 
         for (String part :partsString){
-            String traduccion = tree.buscar(part); 
+            String traduccion = tree.search(part); 
             if (traduccion != null) {
                 finalText.append("*").append(traduccion); 
             } else {
                 finalText.append("*").append(part).append("*"); 
             }
         }
+        finalText.append(".");
 
         return finalText.toString();
     }
